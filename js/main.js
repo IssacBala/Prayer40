@@ -41,7 +41,8 @@ var loadData = function(){
 	var ind = daysBetween(dateToDisable ,curDt);
 	if(allData !== undefined){
 		var data = allData;
-		var objDat = data[parseInt(ind)-1];
+		var objDat = data[parseInt(ind)];
+		$('#pDayNum').text("You are on Day : "+(parseInt(ind)+1)+" / 40");
 		for(var nameVar in objDat){
 			if($('#'+nameVar) !=null){
 				
@@ -53,7 +54,7 @@ var loadData = function(){
 					$('#'+nameVar).html('<a class="bibleref" target="_BLANK" href="https://www.biblegateway.com/passage/?search='+objDat[nameVar]+'&amp;version=NRSV&amp;src=tools">'+objDat[nameVar]+'</a>');
 				
 				else if(nameVar == "pImage" && objDat[nameVar] !=""){
-					document.getElementById("prayFor").style.backgroundImage = 'url('+objDat[nameVar]+')';
+					document.getElementById("prayFor").className  = 'portF';
 				}
 				else
 					$('#'+nameVar).text(objDat[nameVar]);
@@ -65,13 +66,13 @@ var loadData = function(){
 }
 
 $.datetimepicker.setLocale('en');
-	var dateToDisable = new Date(2020,1,25);
+	var dateToDisable = new Date(2020,1,26);
 	var dateTillDisable = new Date();
 	var curDt = dateTillDisable;
 $('#datetimepicker').datetimepicker({
 	beforeShowDay: function(date) {
-		if ((date.getMonth() <= dateToDisable.getMonth() && date.getDate() <= dateToDisable.getDate()) ||
-			(date.getMonth() >= dateTillDisable.getMonth() && date.getDate() > dateTillDisable.getDate())) {
+		if ((date.getTime()<=dateToDisable.getTime()) ||
+			(date.getTime() >= dateTillDisable.getTime())) {
 			return [false, ""]
 		}
 

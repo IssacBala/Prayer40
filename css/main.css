@@ -34,7 +34,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 .header{
 	position: relative;
 	background-image: url('../images/headerback.jpg');
-
+	min-height: 700px;
 	background-size: cover;
 	background-position: center;
 }
@@ -70,11 +70,17 @@ html,h1,h2,h3,h4,h5,h6,a{
 .about{
 	margin: 4em 0;
 	padding: 1em;
+	min-height: 700px;
+    background-size: cover;
+    background-position: center;
+	background:##f4f4f4;
+	
 	position: relative;
 }
 .about h1{
 	color:#213955;
 	margin: 2em;
+	padding-top: 1em;
 }
 .about img{
 	height: 100%;
@@ -103,21 +109,23 @@ html,h1,h2,h3,h4,h5,h6,a{
 .portfolio{
 	margin: 4em 0;
     position: relative;	
+	background:#e5fff4ad;
+	
 }
 .portfolio h1{
 	color:#213955;
-	margin: 2em;	
+	margin: 2em;
+	padding-top: 3em;	
+	opacity:1
 }
 .portfolio img{
 	 height: 15rem;
 	 width: 100%;
 	 margin: 1em;
-
-	
+  /* Add the blur effect */
+      
 
 }
-
-
 /*blog style*/
 
 .blog{
@@ -202,4 +210,3 @@ html,h1,h2,h3,h4,h5,h6,a{
 	color: #888;
 	font-size: 16px;
 }
-
